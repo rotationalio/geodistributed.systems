@@ -1,8 +1,23 @@
 baseURL = "https://geodistributed.systems/"
-languageCode = "en-us"
-title = "Geo-Distributed Systems"
 theme = "learn"
 
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "blue"
+
+# English is the default language
+defaultContentLanguage = "en"
+
+# Force to have /en/my-page and /fr/my-page routes, even for default language.
+defaultContentLanguageInSubdir= true
+
+[Languages]
+[Languages.en]
+title = "Geo-Distributed Systems"
+weight = 1
+languageName = "English"
+
+[Languages.fr]
+title = "Systèmes Géo-Distribués"
+weight = 2
+languageName = "Français"
