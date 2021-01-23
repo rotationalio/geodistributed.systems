@@ -1,2 +1,3 @@
-# geodistributed.systems
-Website for public geo-distributed systems research
+# Geo-Distributed Systems
+
+**Website for public geo-distributed systems research**
