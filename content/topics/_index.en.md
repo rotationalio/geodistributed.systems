@@ -12,6 +12,8 @@ description: "Key topics of interest in geodistributed systems."
 
 **Suggested Readings**
 
+Ousterhout & Rosenblum (1991) [The Design and Implementation of a Log-Structured File System](https://people.eecs.berkeley.edu/~brewer/cs262/LFS.pdf)
+
 Terry, et al. (1994) [Session Guarantees for Weakly Consistent Replicated Data](http://www.cs.cornell.edu/courses/cs734/2000FA/cached%20papers/SessionGuaranteesPDIS_1.html)
 
 Terry, et al. (1995) [Managing Update Conflicts in Bayou, a Weakly Connected Replicated Storage System](https://www.cs.utexas.edu/~lorenzo/corsi/cs380d/papers/p172-terry.pdf)
