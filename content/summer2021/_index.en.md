@@ -4,7 +4,7 @@ date: Wed Jun 16 21:52:01 EDT 2021
 description: "Details, notes, and questions from the Summer 2021 Reading Group."
 ---
 
-## Session 1
+## Session 1: The Promise and the Peril of Really Big Models
 
 **Date**:
 June 16 8:30PM EDT/June 17 8:30AM HKT
@@ -41,13 +41,40 @@ Distributed Systems
 - What is an "intelligent distributed system"?
 
 
-## Session 2
+## Session 2: What Archeology Can Teach Us about Distributed Systems
 
 **Date**:
 June 23 8:30PM EDT/June 24 8:30AM HKT
 
 **Reading**:
 Lamport, Leslie. "The part-time parliament." Concurrency: the Works of Leslie Lamport. 2019. 277-317.
+
+**Questions and Discussion Points:**
+
+The Consensus Metaphor
+- To what extent did Lamport mean to tell the Paxos story in earnest versus an extended allegory?
+- How well has the consensus metaphor served the distributed systems community?
+- What is concurrency and what does it look like in the context of the part time parliament metaphor?
+
+Consistency of the Distributed Log
+- Consistency is about synchronization, which repairs entropy.
+- What are the different types of consistency and which is illustrated by Lamport's part time parliament?
+- What is the difference between eventual consistency and monotonic reads?
+- What is the difference between a "log" and the idea of a distributed ledger? Are these the same?
+
+Paxos & Optimizations
+- Do any real world applications use Paxos?
+- 2 rounds of communication are required for Paxos, this can be optimized using leader optimization (remove the Prepare phase), ballot optimization, or through optimistic consensus (e.g. Fast Path, ePaxos).
+
+
+## Session 3: Fantastic Failures and Where to Find Them
+
+**Date**:
+June 30 8:30PM EDT/July 1 8:30AM HKT
+
+**Reading**:
+
+Muralidhar, et al. (2014) [f4: Facebook’s Warm BLOB Storage System](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-muralidhar.pdf)
 
 **Questions and Discussion Points:**
 
