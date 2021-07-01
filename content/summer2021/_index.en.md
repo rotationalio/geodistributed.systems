@@ -78,4 +78,44 @@ Muralidhar, et al. (2014) [f4: Facebook’s Warm BLOB Storage System](https://ww
 
 **Questions and Discussion Points:**
 
+Optimization vs. Flexibility
+- It optimization (e.g. using data age, application-level requirements) enough to make a distributed system intelligent?
+- What features could you use in a distributed system to train a model that would nominate data to be moved from hot to warm or cold storage?
+- Could you build a distributed system that would be able to adapt to new blob types, e.g. know how to store them most efficiently?
+
+The UX of Failure
+- As users we often experience failures from eventual consistency:
+    - Buying plane tickets - when is the purchase final? How do we know?
+    - Food ordering apps - the fries gets cold while we're waiting for the system to get consistent.
+    - We thought we won the game, but a few seconds later, we're told it was another player.
+- We also experience failures in data systems that are in transition:
+    - Systems that experience massive (e.g. seasonal) spikes in usage that break consistency.
+    - Systems that are being changed to adapt to new market conditions (e.g. conflict between point of sales systems and e-commerce systems).
+- We have also experience correlated failures, such as all of our drives failing simultaneously.
+
+Planning for Failure
+- What is the robustness model when failure happens? What's the "intelligent" approach to recovery from failure?
+- How does data encryption work in a distributed system with correlated failures? What's the relationship between fault tolerance and encryption?
+
+
+**Related Papers**:
+Lu, et al. (2015) [Existential Consensus: Measuring and Understanding Consistency at Facebook](https://sigops.org/s/conferences/sosp/2015/current/2015-Monterey/printable/240-lu.pdf)
+
+Santry, et al. (2004) [Elephant: The File System that Never Forgets](http://www.cs.fsu.edu/~awang/courses/cop5611_s2004/elephant.pdf)
+
+
+## Session 4: What is "Time" in a Distributed System?
+
+**Date**:
+July 7 8:30PM EDT/July 8 8:30AM HKT
+
+**Reading (select one of these)**:
+
+Lamport (1978) [Time, Clocks, and the Ordering of Events in a Distributed System](https://lamport.azurewebsites.net/pubs/time-clocks.pdf)
+
+Corbett, et al (2012) [Spanner: Google's Globally-Distributed Database](https://research.google/pubs/pub39966)
+
+
+**Questions and Discussion Points:**
+
 tbd
