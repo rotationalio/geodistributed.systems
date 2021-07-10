@@ -125,7 +125,7 @@ Corbett, et al (2012) [Spanner: Google's Globally-Distributed Database](https://
 
 "Happened Before"
 - In the Lamport paper, the "happened before" relation evolves from a simple relationship between events in the same process (-->) to a relationship between processes happening across a system of clocks (==>) and finally to an even stronger relation that describes distributed processes within and outside the system (**-->**).
-- The system of clocks relies on two thing to synchronize; first, a mechanism to coordinate via monotonic counters, and a method for arbitrarily ordering system processes (e.g. a global unique identifier for system processes).
+- The system of clocks relies on two things to synchronize; first, a mechanism to coordinate via monotonic counters, and a method for arbitrarily ordering system processes (e.g. a global unique identifier for system processes).
 - Colloquially we are used to thinking of the word "concurrent" to mean something like "simultaneous". However, Lamport introduces a novel way of thinking about concurrency with respect to the "happened before" relation; namely that two distinct events `a` and `b` are concurrent if `a` did not happen before `b` and `b` did not happen before `a`. From the system's perspective, these two events may as well have happened simultaneously, since we don't have a way to order them.
 - How well does the system of clocks scale as system size increases?
 
