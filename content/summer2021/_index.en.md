@@ -134,6 +134,7 @@ Synchronization for the Rich and Famous
 - Spanner leverages TrueTime, an API that represents time as an interval and which accounts for variations across geographically remote components of a system. TrueTime is not source available, but there are some details about how it works in this paper and in follow on publications.
 - Spanner depends on expensive hardware, including both atomic clocks and GPS devices, apparently collocated with every single rack in the system.
 - Spanner is commercially available but does not seem to have much marketing behind it. It is very expensive. Could it be made cheaper by increasing the size of the TrueTime window?
+- How well does Spanner work as the system nodes get further apart geographically? Although the phrase "global" comes up a lot in the paper, the examples seem mostly to detail coordination across regions in North America.
 
 To Tick or Not to Tick
 - Lamport's paper ends with a proof that physical clocks exist &mdash; meaning clocks that are totally differentiable, with no intervals and no ticks. This was likely Lamport's goal, since at the time he was working to try to devise a computer-based clock for SRI.

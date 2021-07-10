@@ -63,13 +63,19 @@ Bilbro & Bengfort (2021) [Concur: An API for Consensus](https://www.slideshare.n
 
 **Suggested Readings**
 
-Zaharia, et al. (2012) [Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
-
 Annamualai, et al. (2018) [Sharding the Shards: Managing Datastore Locality at Scale with Akkio](https://www.usenix.org/system/files/osdi18-annamalai.pdf)
+
+Bender, et al. (2021) [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922)
 
 Bengfort, et al. (2019) [Anti-Entropy Bandits for Geo-Replicated Consistency](https://kelehers.me/papers/get.pl?tag=icdcs018)
 
-Bender, et al. (2021) [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922)
+Hilprecht & Binnig (2021). [One Model to Rule them All: Towards Zero-Shot Learning for Databases](https://arxiv.org/pdf/2105.00642.pdf)
+
+Schmied et al. (2021). [Towards a General Framework for ML-based Self-tuning Databases](https://arxiv.org/pdf/2011.07921.pdf)
+
+Somashekar & Gandhi (2021). [Towards Optimal Configuration of Microservices](https://www3.cs.stonybrook.edu/~anshul/euromlsys21_opt.pdf)
+
+Zaharia, et al. (2012) [Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
 
 ## Data Security and Privacy
 - Public key cryptography
