@@ -4,6 +4,9 @@ date: Wed Jun 16 21:52:01 EDT 2021
 description: "Details, notes, and questions from the Summer 2021 Reading Group."
 ---
 
+## Intelligent Distributed Systems Reading Group
+The inaugural Intelligent Distributed Systems Reading Group (IDSRG) will run from June 2021 through September 2021. Our goal is to survey the distributed systems literature with an eye towards thinking of how machine learning and data analysis might be used to make these systems more flexible.
+
 ## Session 1: The Promise and the Peril of Really Big Models
 
 **Date**:
@@ -120,4 +123,51 @@ Corbett, et al (2012) [Spanner: Google's Globally-Distributed Database](https://
 
 **Questions and Discussion Points:**
 
+"Happened Before"
+- In the Lamport paper, the "happened before" relation evolves from a simple relationship between events in the same process (-->) to a relationship between processes happening across a system of clocks (==>) and finally to an even stronger relation that describes distributed processes within and outside the system (**-->**).
+- The system of clocks relies on two thing to synchronize; first, a mechanism to coordinate via monotonic counters, and a method for arbitrarily ordering system processes (e.g. a global unique identifier for system processes).
+- Colloquially we are used to thinking of the word "concurrent" to mean something like "simultaneous". However, Lamport introduces a novel way of thinking about concurrency with respect to the "happened before" relation; namely that two distinct events `a` and `b` are concurrent if `a` did not happen before `b` and `b` did not happen before `a`. From the system's perspective, these two events may as well have happened simultaneously, since we don't have a way to order them.
+- How well does the system of clocks scale as system size increases?
+
+Synchronization for the Rich and Famous
+- Google's globally distributed system Spanner demonstrates an evolution from the Lamport clock for the age of big data.
+- Spanner leverages TrueTime, an API that represents time as an interval and which accounts for variations across geographically remote components of a system. TrueTime is not source available, but there are some details about how it works in this paper and in follow on publications.
+- Spanner depends on expensive hardware, including both atomic clocks and GPS devices, apparently collocated with every single rack in the system.
+- Spanner is commercially available but does not seem to have much marketing behind it. It is very expensive. Could it be made cheaper by increasing the size of the TrueTime window?
+
+To Tick or Not to Tick
+- Lamport's paper ends with a proof that physical clocks exist &mdash; meaning clocks that are totally differentiable, with no intervals and no ticks. This was likely Lamport's goal, since at the time he was working to try to devise a computer-based clock for SRI.
+- However, 34 years later, the Spanner paper seems to call the existence of physical clocks into question. If Google can't do it without intervals and fancy hardware, can it be done?
+
+**Related Resources**:
+
+SE-Radio (2019) [Episode 377: Heidi Howard on Distributed Consensus](https://www.se-radio.net/2019/08/episode-377-heidi-howard-on-distributed-consensus/)
+
+Kleppman (2020) [Distributed Systems 8.2: Google's Spanner](https://www.youtube.com/watch?v=oeycOVX70aE&list=PLeKd45zvjcDFUEv_ohr_HdUFe97RItdiB&index=25)
+
+
+## Session 5: Can Distributed Systems Learn?
+
+**Date**:
+July 14 8:30PM EDT/July 15 8:30AM HKT
+
+**Reading**:
+
+Bengfort, et al. (2019) [Anti-Entropy Bandits for Geo-Replicated Consistency](https://kelehers.me/papers/get.pl?tag=icdcs018)
+
+**Questions and Discussion Points:**
+
 tbd
+
+
+## Session 6: TBD
+
+**Date**:
+July 21 8:30PM EDT/July 22 8:30AM HKT
+
+**Reading**:
+
+**Questions and Discussion Points:**
+
+tbd
+
