@@ -77,6 +77,16 @@ Somashekar & Gandhi (2021). [Towards Optimal Configuration of Microservices](htt
 
 Zaharia, et al. (2012) [Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
 
+## Energy Efficiency
+- How can distributed systems be made more energy efficient?
+- Is there a more efficient way to do consensus (e.g. emergent consensus)?
+
+**Suggested Readings**
+
+Bender, et al. (2021) [On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?](https://dl.acm.org/doi/pdf/10.1145/3442188.3445922)
+
+Charapko (2021) [Scalable but Wasteful, Or Why Fast Replication Protocols are Actually Slow](http://charap.co/scalable-but-wasteful-or-why-fast-replication-protocols-are-actually-slow/)
+
 ## Data Security and Privacy
 - Public key cryptography
 - Symmetric and asymmetric encryption
@@ -120,6 +130,8 @@ DePalma, et al. (2006) [Can’t Read, Won’t Buy](https://insights.csa-research
 - gRPC and Protocol Buffers
 
 **Suggested Readings**
+
+gRPC Authors (2021) [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 
 Nally (2020) [gRPC vs REST: Understanding gRPC, OpenAPI and REST and when to use them in API design](https://cloud.google.com/blog/products/api-management/understanding-grpc-openapi-and-rest-and-when-to-use-them)
 
