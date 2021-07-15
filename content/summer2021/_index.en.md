@@ -160,23 +160,23 @@ Bengfort, et al. (2019) [Anti-Entropy Bandits for Geo-Replicated Consistency](ht
 
 Punishment and Reward
 - The authors apply reinforcement learning (RL) to optimize anti-entropy in a distributed system.
-- Coming up with a good reward function is a common blocker to implementing RL. The clarity of the reward function (rewards for fast, productive sessions) is interesting.
+- Coming up with a good reward function is a common blocker to implementing RL. The clarity of the reward function (rewards for fast, productive sessions) is interesting; this is a great application for RL.
 
 Lessons Learned
-- There are a few human-detectable patterns in the learning, such as data center co-location. The model has learned that physical distance is a good measure to improve anti-entropy, but it's not a perfect correlation. 
-- One result is that you can't tell the difference between node performance.
+- There are a few human-detectable patterns from the RL, such as data center co-location. The model has learned that physical distance is a good measure to improve anti-entropy, but it's not a perfect correlation. 
+- It's difficult to tell the differences in performance between the nodes.
 - Another result is that not all data centers are created equal, which you can see in the data, especially when they are in the same geographic area e.g. Montreal performs far worse then VA or Ohio in terms of moving data across the network.
 - One notable absence is that we didn't see a hierarchy emerge; we expected to see super-spreaders in different regions, but that wasn't prevalent.
--  It seems like there would be a great deal of overlap with routing? There are some very interesting routing algorithms (e.g. traveling salesman) though there are different requirements. One significant difference is that routing is local only vs. the global system we experimented on.
+-  It seems like there would be a great deal of overlap with routing? There are some very interesting routing algorithms (e.g. traveling salesman) though there are different requirements. One significant difference is that routing is local only vs. the global system the authors experimented on.
 
 Experimental Design
 - The authors selected all regions that were available at the time (ex Beijing) with the caveat that some of these regions have many availability zones and they selected A, B, and C.
 - The accesses were balanced and consistent, which made for good experimental conditions, but are admittedly not representative of the dynamism of throughput in real applications.
-- It was useful to do a thought experiment and think of the system as a phone tree that disseminates downward, which is similar to the super-spreader analogy. You controlled for many variables; in the real world, you would most likely see more variability and a heterogeneous topology. And if your network optimized for cost, you'll show the cheapest nodes vs speed vs compute; or your could optimize the network for speed or compute.
+- It was useful to do a thought experiment and think of the system as a phone tree that disseminates downward, which is similar to the super-spreader analogy. The authors controlled for many variables; in the real world, you would most likely see more variability and a heterogeneous topology. If your network optimized for cost, would you show the cheapest nodes vs speed vs compute? Or you could optimize the network for speed or compute.
 - With reinforcement learning in general, one issue is: What happens when the world changes? When a system is dynamic? There is some research on this but it often comes down to hard resets; it's often 100-150 time steps to learn the new system, which is not very long, but it doesn't allow for much flexibility.
 
-Achieveing Fairness
-- One interesting concept is stomping i.e. when there are concurrent writes, which gets stomped out? Is there any discussion in the community about equitable stomping? Does it depend on a region that is faster, or more storage? Is there any discussion about how to make it as random as possible beyond Precedence IDs?
+Achieving Fairness
+- One interesting concept is "stomping" i.e. when there are concurrent writes, which gets stomped out? Is there any discussion in the community about equitable stomping? Does it depend on a region that is faster, or more storage? Is there any discussion about how to make it as random as possible beyond Precedence IDs?
 - Precedence IDs are human assigned by sys admins and it's an opportunity to inject human bias into the system; e.g. VA > CA > OH etc.; in the system Rotational just deployed, we assigned Precedence IDs using a round-robin method.
 - This raises an interesting question: What other ways can human bias be injected into a system that we may not understand or be conscious of?
 - In some ways, it's reasonable to assume any intelligent system will have some human bias injected e.g. a system could learn bias based on user engagement (heavy user); we may not be able to remove bias but can we find ways to combat or adapt the system for a bias?
