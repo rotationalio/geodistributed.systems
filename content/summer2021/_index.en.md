@@ -159,7 +159,7 @@ Bengfort, et al. (2019) [Anti-Entropy Bandits for Geo-Replicated Consistency](ht
 **Questions and Discussion Points:**
 
 Punishment and Reward
-- Authors apply reinforcement learning (RL) to optimize anti-entropy in a distributed system.
+- The authors apply reinforcement learning (RL) to optimize anti-entropy in a distributed system.
 - Coming up with a good reward function is a common blocker to implementing RL. The clarity of the reward function (rewards for fast, productive sessions) is interesting.
 
 Lessons Learned
@@ -197,7 +197,7 @@ Future Research
 July 21 8:30PM EDT/July 22 8:30AM HKT
 
 **Reading**:
-gRPC Authors (2021) [What is gRPC](https://grpc.io/docs/what-is-grpc/)
+gRPC Authors (2021) [What is gRPC?](https://grpc.io/docs/what-is-grpc/)
 
 **Questions and Discussion Points:**
 
