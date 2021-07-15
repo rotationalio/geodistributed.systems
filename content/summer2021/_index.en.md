@@ -158,15 +158,46 @@ Bengfort, et al. (2019) [Anti-Entropy Bandits for Geo-Replicated Consistency](ht
 
 **Questions and Discussion Points:**
 
-tbd
+Punishment and Reward
+- Authors apply reinforcement learning (RL) to optimize anti-entropy in a distributed system.
+- Coming up with a good reward function is a common blocker to implementing RL. The clarity of the reward function (rewards for fast, productive sessions) is interesting.
+
+Lessons Learned
+- There are a few human-detectable patterns in the learning, such as data center co-location. The model has learned that physical distance is a good measure to improve anti-entropy, but it's not a perfect correlation. 
+- One result is that you can't tell the difference between node performance.
+- Another result is that not all data centers are created equal, which you can see in the data, especially when they are in the same geographic area e.g. Montreal performs far worse then VA or Ohio in terms of moving data across the network.
+- One notable absence is that we didn't see a hierarchy emerge; we expected to see super-spreaders in different regions, but that wasn't prevalent.
+-  It seems like there would be a great deal of overlap with routing? There are some very interesting routing algorithms (e.g. traveling salesman) though there are different requirements. One significant difference is that routing is local only vs. the global system we experimented on.
+
+Experimental Design
+- The authors selected all regions that were available at the time (ex Beijing) with the caveat that some of these regions have many availability zones and they selected A, B, and C.
+- The accesses were balanced and consistent, which made for good experimental conditions, but are admittedly not representative of the dynamism of throughput in real applications.
+- It was useful to do a thought experiment and think of the system as a phone tree that disseminates downward, which is similar to the super-spreader analogy. You controlled for many variables; in the real world, you would most likely see more variability and a heterogeneous topology. And if your network optimized for cost, you'll show the cheapest nodes vs speed vs compute; or your could optimize the network for speed or compute.
+- With reinforcement learning in general, one issue is: What happens when the world changes? When a system is dynamic? There is some research on this but it often comes down to hard resets; it's often 100-150 time steps to learn the new system, which is not very long, but it doesn't allow for much flexibility.
+
+Achieveing Fairness
+- One interesting concept is stomping i.e. when there are concurrent writes, which gets stomped out? Is there any discussion in the community about equitable stomping? Does it depend on a region that is faster, or more storage? Is there any discussion about how to make it as random as possible beyond Precedence IDs?
+- Precedence IDs are human assigned by sys admins and it's an opportunity to inject human bias into the system; e.g. VA > CA > OH etc.; in the system Rotational just deployed, we assigned Precedence IDs using a round-robin method.
+- This raises an interesting question: What other ways can human bias be injected into a system that we may not understand or be conscious of?
+- In some ways, it's reasonable to assume any intelligent system will have some human bias injected e.g. a system could learn bias based on user engagement (heavy user); we may not be able to remove bias but can we find ways to combat or adapt the system for a bias?
+- Randomization may be one way to combat bias; it's an open question if bias is worth thinking about it as long as the system has been consciously set up to combat it.
+- Another thought experiment: Imagine a linear network that propagates. There's no way to know how far a write has propagated; so the world could read a write that has a lower precedence but it's the last to know; however, consensus does not allow that to happen; it totally order the writes.
+
+Future Research
+- Can you optimize for cost? For example, in Google Cloud, you incur a cost between continents; you really only want one node and not all nodes in the transfers; on the other side of the coin, you want bandwidth; knowing that you'll always have a transfer vector, you can ask questions such as: Can you minimize the transfer cost? Are there intersectional differences inside the cloud? 
+- The other thing to think about is user experience. Might we include inconsistencies in the reward function?
+- Another possible optimization is objects edited together vs objects edited separately? Can we increase their reciprocal transparency visibility based on this variable? 
+- What would happen if we injected chaos; how does that impact the system?
+- How could this network be more responsive, more flexible? What happens when accesses change over time? 
 
 
-## Session 6: TBD
+## Session 6: Languages of Distributed Systems
 
 **Date**:
 July 21 8:30PM EDT/July 22 8:30AM HKT
 
 **Reading**:
+gRPC Authors (2021) [What is gRPC](https://grpc.io/docs/what-is-grpc/)
 
 **Questions and Discussion Points:**
 

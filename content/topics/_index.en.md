@@ -126,10 +126,15 @@ The GNU gettext authors [GNU gettext utilities](https://www.gnu.org/software/get
 
 DePalma, et al. (2006) [Can’t Read, Won’t Buy](https://insights.csa-research.com/reportaction/305013126/Marketing)
 
-## APIs
+## Languages and APIs
+- What languages are best suited to distributed systems?
 - gRPC and Protocol Buffers
 
 **Suggested Readings**
+
+Bal, et al. (1989) [Programming Languages for Distributed Computing Systems](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.145.7873&rep=rep1&type=pdf)
+
+Ferreira, et al. (2020). [Programming Languages for Distributed Systems and Distributed Data Management](https://drops.dagstuhl.de/opus/volltexte/2020/11858/pdf/dagrep_v009_i010_p117_19442.pdf)
 
 gRPC Authors (2021) [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 
