@@ -203,3 +203,26 @@ gRPC Authors (2021) [What is gRPC?](https://grpc.io/docs/what-is-grpc/)
 
 tbd
 
+## Session 7: Takeaways from HotStorage 2021
+
+**Date**:
+July 28 8:30PM EDT/July 29 8:30AM HKT
+
+**Reading**:
+This week, instead of a shared reading, please register and attend some portion of [HotStorage 2021](https://www.hotstorage.org/2021/), so that we can discuss highlights and takeaways during our usual meeting time.
+
+**Questions and Discussion Points:**
+
+tbd
+
+## Session 8: tbd
+
+**Date**:
+August 4 8:30PM EDT/August 5 8:30AM HKT
+
+**Reading**:
+tbd
+
+**Questions and Discussion Points:**
+
+tbd
