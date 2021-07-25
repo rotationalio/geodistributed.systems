@@ -201,7 +201,39 @@ gRPC Authors (2021) [What is gRPC?](https://grpc.io/docs/what-is-grpc/)
 
 **Questions and Discussion Points:**
 
-tbd
+HTTP vs HTTP2: A Major Upgrade
+- Much of gRPC's functionality is enabled by HTTP2
+- One of the biggest benefits of HTTP2 is it allows for full duplex communication; the web browser can make one request and get all of the data at once (server to client + client to server)
+- A lot of things got jammed into HTTP that it wasn't necessarily designed for e.g. web sockets, long-term connections, etc.
+- HTTP2 is a binary format vs plaintext in HTTP; a lot of the issues in HTTP are due to plaintext encoding
+- Because of its binary format, HTTP2 adds security and massively improves performance e.g. variable inline encoding, compression, better performance management overall, etc.
+- HTTP is like the Model T in that Ford didn't know we would build interstate highways; HTTP2 is focused on what the internet will look like in 30 years and now the question is when we'll see it in browsers
+
+API Design
+- RESTful APIs are designed to be human-readable whereas gRPC is generally for microservices communication since it is much faster, takes up much less memory, etc.
+- One design consideration is human-to-machine communication vs. machine-to-machine or service-to-service communication
+- gRPC is a strong contract about how to talk to each other between the data provider and data consumer; it's a very firm and specific but it opens up flexibility for a wide range of business use cases
+- gRPC is used widely in microservices e.g. shopping cart management services that talk to inventory management services, etc.
+- gRPC allows for pre-processing or "pre-code" to be run before services can talk to each other, which means strict communication protocols e.g. the service has to conform and meet certain requirements before it can talk to another service
+- gRPC is useful for advanced services such as moving around large amounts of data between services
+- Restful APIs are suited for external programs since they allow for flexibility whereas gRPCs could be better for internal services because they can tightly control design architecture e.g. Google as an example. gRPC is more efficient for asynchronous communication vs REST which is better for sequential communication
+- Generally, gRPCs are well-suited for intelligent distributed systems because of its dependence on HTTP2 and its point-to-point communication (that is initiated by one point, not either)
+- There are other lower-level libraries like ZeroMQ that could be useful for distributed systems
+
+Protocol Buffers in The Wild
+- Probably many of us have used protobufs because that's how Tensorflow works e.g. passing messages between the neural network layers
+- Tensorflow has several protobuf and gRPC dependencies; for example, TensorFlow Serving, where models are hosted, is gRPC
+
+Programming Languages & Distributed Systems
+- Languages that get closer to the core of how the computer/machine communicates seem to be better for distributed systems
+- In contrast, a language like Python is designed to be more human-readable and is less suitable for distributed systems
+- While protocol buffers are meant to be language agnostic, gRPC is especially popular with C++ and Golang developers, which makes sense when you think about the built-in coroutines (or Go routines) and channels that are features of those languages. Similar to the reason that Python developers like JSON so much, since it can be seamlessly converted into dictionary objects.
+
+**Related Resources**
+
+- Various [networking pirate patterns in ZMQ](https://zguide.zeromq.org/docs/chapter4/]https://zguide.zeromq.org/docs/chapter4/)
+- Podcast interview of [gRPC tech lead Doug Fawley at Google](https://www.se-radio.net/2020/08/episode-421-doug-fawley-on-grpc/)
+
 
 ## Session 7: Takeaways from HotStorage 2021
 
