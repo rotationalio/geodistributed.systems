@@ -122,9 +122,15 @@ TRISA Working Group (2020) [The TRISA Whitepaper](https://trisa.io/trisa-whitepa
 
 **Suggested Readings**
 
+DePalma, et al. (2006) [Can’t Read, Won’t Buy](https://insights.csa-research.com/reportaction/305013126/Marketing)
+
+Scott (2013) [Characters, Symbols and the Unicode Miracle](https://youtu.be/MijmeoH9LT4)
+
+Patch (2014) [Unicode Beyond Just Characters: Localization with the CLDR](https://youtu.be/DcPpUnlENAs)
+
 The GNU gettext authors [GNU gettext utilities](https://www.gnu.org/software/gettext/manual/gettext.html)
 
-DePalma, et al. (2006) [Can’t Read, Won’t Buy](https://insights.csa-research.com/reportaction/305013126/Marketing)
+CLDR [Unicode Common Locale Data Repository](http://cldr.unicode.org/index)
 
 ## Languages and APIs
 - What languages are best suited to distributed systems?
