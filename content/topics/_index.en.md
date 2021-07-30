@@ -28,6 +28,7 @@ Hewitt, et al. (2012) [The Actor Model (everything you wanted to know...)](https
 
 Bernstein, et al. (2014) [Orleans: Distributed virtual actors for programmability and scalability](https://www.semanticscholar.org/paper/Virtual-Actors-for-Programmability-and-Scalability[…]stein-Bykov/3f41b90454cbf73ce284917ae58678bc86d6ee76?p2df)
 
+Raju, et al. (2017) [PebblesDB: Building Key-Value Stores using Fragmented Log-Structured Merge Trees](https://dl.acm.org/doi/abs/10.1145/3132747.3132765)
 
 ## Distributed Systems in the Wild
 - Data infrastructures of social media apps
@@ -140,7 +141,7 @@ CLDR [Unicode Common Locale Data Repository](http://cldr.unicode.org/index)
 
 Bal, et al. (1989) [Programming Languages for Distributed Computing Systems](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.145.7873&rep=rep1&type=pdf)
 
-Ferreira, et al. (2020). [Programming Languages for Distributed Systems and Distributed Data Management](https://drops.dagstuhl.de/opus/volltexte/2020/11858/pdf/dagrep_v009_i010_p117_19442.pdf)
+Ferreira, et al. (2020) [Programming Languages for Distributed Systems and Distributed Data Management](https://drops.dagstuhl.de/opus/volltexte/2020/11858/pdf/dagrep_v009_i010_p117_19442.pdf)
 
 gRPC Authors (2021) [Introduction to gRPC](https://grpc.io/docs/what-is-grpc/introduction/)
 

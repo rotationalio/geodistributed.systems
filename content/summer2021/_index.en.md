@@ -245,12 +245,116 @@ This week, instead of a shared reading, please register and attend some portion 
 
 **Questions and Discussion Points:**
 
-tbd
+Key Papers
+- [Matte et al (2021) "Scalable but Wasteful: Current State of Replication in the Cloud"](https://dl.acm.org/doi/10.1145/3465332.3470882)
+- [Adams et al (2021) "Enabling Near-Data Processing in Distributed Object Storage Systems"](https://www.hotstorage.org/2021/2021-slides/ndp_for_obj_stores_slids_adams.pdf)
+- [Deshpande et al (2021) "Self-service Data Protection for Stateful Containers"](https://dl.acm.org/doi/10.1145/3465332.3470876)
+- [Zhang & Dai (2021) "SentiLog: Anomaly Detecting on Parallel File Systems via Log-based Sentiment Analysis"](https://www.hotstorage.org/2021/2021-slides/SentiLog-SLIDES-Zhang.pdf)
+- [Akgun et al (2021) "A Machine Learning Framework to Improve Storage System Performance"](https://www.hotstorage.org/2021/2021-slides/KML-ML-Framework-Storage-OSs-SLIDES-Ibrahim_Umit_Akgun.pdf)
 
-## Session 8: tbd
+Terms of Interest
+- "NDP" - near data processing; a big focus of the conference. Managing hundreds of storage nodes, making the data more distributed
+- "CRDTs" - conflict-free replicated datatype
+- "LSM tree" - log-structured merge tree
+- "SSD" - solid state drive
+- "RPO" - recovery point objective
+- Blocks vs Rocks - Blocks are uniformly sized vs. rocks, which are more flexible and variable-sized and supports more granularity and more/ different types of file sizes; PebbleDB is smaller rocks
+- Shards vs Slices vs Stripes
+- "rowhammering"
+- PFS: why no global IDs?
+- Two-phase backup scheduler
+
+Types of Consistency
+- We mostly have been talking about eventual consistency so far. Consistency is about what users can expect from a system.
+- As you move up the spectrum toward strong consistency, the more coordination is needed i.e there is a lot of message traffic, which often leads to degraded performance, which runs into the CAP problem.
+- There is a spectrum from weak to strong consistency:
+    - "weak consistency": No guarantee that systems will converge
+    - "eventual consistency" (and "strong eventual consistency"): If you stop writing, the system will eventually become consistent.
+    - "causal consistency": guarantees all processes observe causally-related operations in a common order.
+    - "sequential consistency": Ordered operations that are observable e.g. the Lamport paper
+    - "strong consistency" (aka linearizability): For every person on earth there is a single order of operations. Spanner is probably the closest example we've looked at so far.
+
+New Technologies
+- Databases, File Systems, and Object Storage
+    - CockroachDB
+    - YugaByte
+    - RocksDB
+    - PebbleDB
+    - ElmerFS
+    - Lustre and BeeGFS (Parallel file systems)
+    - Minio
+    - Ceph
+    - Storj.io
+    - etcd
+
+- Consensus Algorithms
+    - Raft
+    - Multi-Paxos
+    - EPaxos
+    - Pig Paxos
+
+- Libraries
+    - DeepLog
+
+General Questions
+- *Why is it called "Hot Storage"?*
+    - Originally called "Hot Topics in Storage Systems"; follows from a series of "Hot" topics in computer science such as security, networking, etc.
+    - The name Hot Storage is also connected to electrical engineering and it's relation to storage systems i.e. thousands of spinning discs
+    - Attracts a lot of interesting domains e.g. bioinformatics, DNA storage systems, ML and optimization - very interdisciplinary
+
+- *What's with the emphasis on flash storage?*
+    - Might have to do with the hardware available to the participants; best way to experiment and try out new ideas and configurations.
+
+- *Is it common for there to be so many theoretical papers (compared to ones with experimental results)?*
+    - Hot Storage has become a primary publishing venue for grad students; it gives researchers the opportunity to share/ discuss research even if they don't have complete results yet
+
+- *Not a lot of representation from the big cloud folks - Google, Amazon, that other one. Why is that?*
+    - FAST is the larger conference counterpart to Hot Storage; a lot of big tech companies (Twitter, Google, FB) sponsor or attend FAST
+
+
+
+## Session 8: What is a "File" Anyway?
 
 **Date**:
 August 4 8:30PM EDT/August 5 8:30AM HKT
+
+**Reading**:
+Rosenblum & Osterhout (1991) [The Design and Implementation of a Log-Structured File System](https://people.eecs.berkeley.edu/~brewer/cs262/LFS.pdf)
+
+**Questions and Discussion Points:**
+
+tbd
+
+
+## Session 9: tbd
+
+**Date**:
+August 11 8:30PM EDT/August 12 8:30AM HKT
+
+**Reading**:
+tbd
+
+**Questions and Discussion Points:**
+
+tbd
+
+## Session 10: tbd
+
+**Date**:
+August 18 8:30PM EDT/August 19 8:30AM HKT
+
+**Reading**:
+tbd
+
+**Questions and Discussion Points:**
+
+tbd
+
+
+## Farewell and Onto New Things...
+
+**Date**:
+August 25 8:30PM EDT/August 26 8:30AM HKT
 
 **Reading**:
 tbd
