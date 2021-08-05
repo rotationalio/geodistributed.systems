@@ -323,16 +323,57 @@ Rosenblum & Osterhout (1991) [The Design and Implementation of a Log-Structured 
 
 **Questions and Discussion Points:**
 
-tbd
+The "Philosophy" of Files
+- In our every day lives, files seem mundane, but this paper raises philosophical questions about their existence that prompts a re-think. Files can be something, anything, any piece of data that you want to write to disk with some meta data. Files are made of even more basic units i.e. bits; files are an amalgamation or a collection of bits much like people are collections of molecules; the bits come together to do things and then eventually disband and go on to do other things
+- If you look back at many of the Hot Storage papers from last week, the knowledge and tenets of this paper are in many ways embedded in those papers
+- Another interesting question is the definition of "live" vs "dead" data; is "dead" data just deleted data? How do we define "dead" data? When deleting something from a file system, a lot of files systems work by removing just the meta data so it's somewhat easy to restore data; so truly erasing a disc means scrambling the bits so the patterns can't be reconstructed i.e. the pointers are gone but bits are still there. A lot has to happen to make data "dead" e.g. the inode that points to the chunk has to be re-written and then we have to re-write the inode map. "dead" data can also be any data that will be consumed by the reclamation process i.e. the process that it will reclaim chunks that no longer have an inode pointer. So there are many ways data can "die" e.g. when the inode is re-written, when memory is re-written
+
+The Physics of Files
+- The block is the physical storage on the disc and each disc is a certain number of bits. Files can be decomposed into blocks (e.g. a big file might require several or many blocks). Blocks can also contain multiple files (e.g. if the files are smaller than the block size).
+- The file system in the paper is highly dependent on the physics of spinning disks; there is rotational latency and seek latency; the access speed was constrained by the time it takes to physically travel; it makes us appreciate the mechanics of the hardware
+- Today we have SSD and Flash, so seek latency is reduced but still exists; it happens in a different way; storage systems jump around to different bits e.g. NVM; there's still overhead so you still want to engage in as much sequential writing as you can
+- The log structure is still relevant even though SSD and Flash have reduced the physics of discs
+- It's interesting to note that this paper was published around the time SSD technology was under research
+
+Distributed File Systems
+- The way that people initially solved the shared file system was using the NFS model; Dave makes a change and then information about the change goes through the network and everyone else gets to see the update, which became increasingly less performant as computers got faster and people started to create more content. Our speed expectations changed a lot!
+- When editing a shared file, if a file is in blocks, then ask which file is different? diff!
+- Git has a good diff tool; it has to track many changes from many sources; git doesn't think of your Python program as single thing; it looks at it in chunks and does some math and looks at what's different; it doesn't matter what has changed, but if there's a change, it commits the change; git uses something like a [Merkle tree](https://en.wikipedia.org/wiki/Merkle_tree) to break things up into chunks and decide what has changed vs what has not
+
+The File System vs the Application
+- The file system doesn't have much control over what happens; it controls the inode but the application has much more control over actions; write/seek/chunk/flush operations are what the file system understands but the application has a say; e.g. Vim will do things on a line-by-line basis vs emacs, which will write things in chunks
+- Git is different as it's saving multiple files from multiple sources so it has much more control
+- It's interesting to note the hardware will "lie" to you about what's really happening, especially with encryption you lose some ability; RAID will also "lie" as its just putting things into the buffer
+- A buffer is another element of a file system: it intentionally delays the writes to accumulate them and then write a chunk together; buffers may seem like an annoyance since they intentionally slow things down for sequential write efficiency
+- But there's also a danger to buffers because what happens if we buffer for too long? You could lose data and run into the security issue of a buffer overflow e.g. buffer is full, electricity goes out, and then everything unwritten is gone
+
+Building Your Own File System
+- It's feasible (yet not trivial) to create your own.
+- Creating a file system is putting a fence around a chunk of storage on your machine and saying "this is mine" for the file system, and then using [Fuse](https://bazil.org/fuse/) to write functions to manage it.
+
+Thinking About New Architectures
+- A significant amount of work is done just moving data around; many systems today rely on technology that emerged in the 1960s
+- Today we have new specialized chips (ASICs), new storage options, etc
+- What if we built a system from the ground up to take advantage of these new technologies to build intelligent agents that match compute and storage with location; what could we free up computers to do? what could we free up people to do?
+- One possible result is this could change the nature of a program.
+- There's interesting research emerging around these topics. Check out this [keynote address](https://youtu.be/0cfJNFt1bWA?t=4391) by Peter Alvaro at this year's [PAPOC conference](https://papoc-workshop.github.io/2021/).
 
 
-## Session 9: tbd
+**Related Resources**
+- [LFS explanation with amusing graphics](https://www.eecs.harvard.edu/~cs161/notes/lfs.pdf)
+- Ben Stopford's [Log Structured Merge Trees](http://www.benstopford.com/2015/02/14/log-structured-merge-trees/)
+- [Amazon Elastic File Storage with comparison to Elastic Block Storage](https://aws.amazon.com/efs/when-to-choose-efs/)
+
+
+
+## Session 9: Computing on Distributed Data
 
 **Date**:
 August 11 8:30PM EDT/August 12 8:30AM HKT
 
 **Reading**:
-tbd
+
+Zaharia, et al. (2012) [Resilient Distributed Datasets: A Fault-Tolerant Abstraction for In-Memory Cluster Computing](https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf)
 
 **Questions and Discussion Points:**
 
