@@ -416,7 +416,7 @@ August 18 8:30PM EDT/August 19 8:30AM HKT
 
 **Reading**:
 
-Ongaro & Ousterhout (2013) [In Search of an Understandable Consensus Algorithm](http://files.catwell.info/misc/mirror/raft/raft.pdf)
+Ongaro & Ousterhout (2013) [In Search of an Understandable Consensus Algorithm](https://www.usenix.org/system/files/conference/atc14/atc14-paper-ongaro.pdf)
 
 **Questions and Discussion Points:**
 

@@ -54,7 +54,7 @@ Lamport, et al. (1982) [The Byzantine Generals Problem](https://lamport.azureweb
 
 Lamport (2001) [Paxos Made Simple](https://lamport.azurewebsites.net/pubs/paxos-simple.pdf)
 
-Ongaro & Ousterhout (2013) [In Search of an Understandable Consensus Algorithm](http://files.catwell.info/misc/mirror/raft/raft.pdf)
+Ongaro & Ousterhout (2013) [In Search of an Understandable Consensus Algorithm](https://www.usenix.org/system/files/conference/atc14/atc14-paper-ongaro.pdf)
 
 Bilbro & Bengfort (2021) [Concur: An API for Consensus](https://www.slideshare.net/RebeccaBilbro/concur-249308061)
 
