@@ -377,15 +377,46 @@ Zaharia, et al. (2012) [Resilient Distributed Datasets: A Fault-Tolerant Abstrac
 
 **Questions and Discussion Points:**
 
-tbd
+Distributed Computation vs Distributed Storage
+- Although the Spark paper is not strictly related to intelligent distributed systems, the model that Spark uses to distribute computation across sections of a dataset is very reminiscent of the shared log abstraction from the distsys literature.
 
-## Session 10: tbd
+Which Models Distribute?
+- Models that are convenient to sparkify: when it's straightforward to express the algorithm in terms of a series of transformations
+    - Logistic regression & other GLMs
+    - Tree-based models
+    - kMeans clustering
+    - topic modeling
+- Models that don't work well with the spark model: when partitioning the data interferes with the model's ability to learn or generalize the decision space
+    - kNN
+    - non-linear SVM
+    - time series data models
+
+Other Ways to Scale Computation
+- For the Python/NumPy/Pandas/Sklearn Community
+    - [Dask](https://dask.org/): advanced parallelism for analytics
+    - [Koalas](https://github.com/databricks/koalas): pandas API on Apache Spark
+    - [MLlib](https://spark.apache.org/mllib/): Apache Spark's scalable machine learning library
+- For Time Series Analytics
+    - [btrdb](http://btrdb.io/): rapid storage and analytics for scalar-valued timeseries data
+    - [Timescale DB](https://www.timescale.com/): PostgreSQL for time‑series
+- More!
+    - [Ray](https://ray.io/): Fast and Simple Distributed Computing
+    - [Julia](https://julialang.org/): a new programming language for high performance analytics
+
+
+**Related Resources**
+
+Bengfort & Kim (2016) [Data Analytics with Hadoop](https://learning.oreilly.com/library/view/data-analytics-with/9781491913734/)
+
+
+## Session 10: The Importance of Understandability
 
 **Date**:
 August 18 8:30PM EDT/August 19 8:30AM HKT
 
 **Reading**:
-tbd
+
+Ongaro & Ousterhout (2013) [In Search of an Understandable Consensus Algorithm](http://files.catwell.info/misc/mirror/raft/raft.pdf)
 
 **Questions and Discussion Points:**
 
