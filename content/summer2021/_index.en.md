@@ -420,8 +420,58 @@ Ongaro & Ousterhout (2013) [In Search of an Understandable Consensus Algorithm](
 
 **Questions and Discussion Points:**
 
-tbd
+Raft vs Paxos
+- This paper is presented in a different way vs Lamport’s Paxos paper; it’s mostly about implementation; Paxos was more about theory (and even storytelling); this was about implementation with primitives like RPCs
+- There are similar concepts in the two papers like the logical clock, turns, etc
+- Raft "feels" of a different, newer era; Paxos assumes compute time is expensive so presents a theory based on those constraints vs. Raft which was written in a time when compute is much more abundant
+- Raft is a more understandable algorithm compared to Paxos; with Paxos, the algorithm is revealed piecemeal and is not so much presented as a system; Raft is presented as a complete system/implementation
+- The main thrust of Raft was about understandability; it offers similar performance as Paxos but is much simpler to reason about
+- As engineers, we work to marginally optimize performance whereas understandability is often undervalued and understated; Diego's (paper’s author) hook was understandability and he was surprised that it was so compelling
+- Another angle of the Raft paper is it's application and adaptability to situations in the real world
+- Raft also used creative ways to express functionality e.g. the "heartbeat" as the mechanism for the system to check the state of the leader; maybe this makes it more relatable
+- Also what makes it relatable is that two Stanford PhDs said out loud that "Paxos is hard to understand", which was probably novel
+- However, not everyone thinks Raft is easier; it depends on your mental model; the lineage that produced Raft believed that Paxos was intentionally obfuscated because of how the paper was written vs another lineage who inherited from the Paxos tradition
+- For example  [Michael Whittaker's paper on "compartmentalization"](https://arxiv.org/abs/2012.15762) whereby the leader delegates/ communicates to a lower level set of proxy leaders to take pressure off the leader, might be seen as a Paxos "revival"
+- The Paxos paper included a formal proof whereas Raft was about an interesting/unexpected edge case and Raft was the simplest/best solution
+- It is interesting to perceive different cultures and lineages in the distributed systems domain
 
+Paxos vs Raft in Use
+- Spanner: Paxos; this is a Google implementation of fast Paxos
+- Chubby: Paxos; a distributed lock server that was built to bail the GFS out of trouble
+- Zookeeper: is Paxos-like but technically ZAB not Paxos
+- Kubernetes: etcd, which uses Raft
+- MongoDB: Raft for replication
+- Yugabyte: Raft
+- CockroachDB: Raft
+- Interesting to apply the "90/10" rule to Paxos and Raft
+    - Paxos is hard implement for 90% of use cases, but once you get to 90%, the remaining 10% is "easy"
+    - Raft covers 90% of use cases, but the "dragons" live in the 10%; those high throughput, edge cases, that's when things get difficult or impossible in Raft
+- Because of its understandability, Raft became a class project in many comp sci grad classes; many grad students implemented Raft and, in doing so, found a lot of edge cases where Raft struggles or doesn't work
+- For example, many found that Raft can get into "thrashing" where there are multiple competing leaders who keep incrementing the term number and so candidates keep failing because they can't get enough votes, which makes Raft unavailable; basically, everyone fails and no one has availability
+- In contrast, Paxos is designed so it will never be unavailable
+- In Raft, time is not a "lie"; we can use an actual clock and call each other to figure things out
+- Raft uses actual clocks vs Paxos, which uses message time and the ordering of when messages are received, which is not really time; one is more intuitive whereas the other is more abstract
+- From an engineering perspective, these are two different philosophical approaches to the application of time to systems
+- One issue in Paxos is "Eventual Availability"; when a node becomes a leader, it's not guaranteed that they are up to date; there can be a slow period of updating if some of the machines are older or use outdated technology, which can't happen in Raft
+- Technically, Paxos and Raft are actually not that different; the algorithms are similar and both satisfy the two main conditions of (1) state machine safety (*if one server applies a log entry at a given index, no other server will apply a different log entry to that index)*  and (2) leader completeness (*if an operation is committed at some index by the leader, all subsequent leaders will have that same operation at the same index*); yet they are in many ways defined by their "origin stories"
+
+Scalability of Raft & Paxos
+- How much applied research has there been about the scalability of Raft and Paxos?
+- They are both single leader distributed log systems; it seems the leader will get overwhelmed with messages and communication as it scales
+- A paper called "Raft Re-floated" explored the scalability of Raft
+- It focuses on the importance of what happens at boot time in Raft; there's a balancing act; there is an interval/ heartbeat because if all nodes send votes at the same time, then they will land at the same time and will stall; whereas if the time interval is too long between heartbeats, then the wait time can take too long for modern systems and user expectations; so what you do at boot is important
+- Raft does not scale beyond 5-7 nodes; you'll quickly run into the "thrashing" problem
+- How is Raft so popular if it will thrash at 5-7 nodes? Two possible explanations for Raft's popularity: (1) In its design, the most performant node will "win" i.e. the node with more connectivity/ CPU/ Up Time will outperform the other nodes; (2) It's much more easier to implement compared to Paxos
+- The scalability of Paxos depends on how it's implemented e.g. compartmentalization is an approach where the leader delegates some communications to proxy leaders and the acceptors scale in a round-robin process
+- One analogy for scaling both algorithms is imagining building a row of legos and you want to place the same bricks with the same colors on top of each other quickly; we can go as fast we can, but that will most likely result in the row being out of order
+- All of these options are about how to slow down and get it right in the same order vs. speed
+- In reality, it's hard to compare Raft vs Paxos at scale, there's no easy way to benchmark them, which is why a consensus API may be useful!
+
+**Related Resources**
+
+Whittaker (2020) [Scaling Replicated State Machines with Compartmentalization](https://www.bilibili.com/video/BV1wo4y1U7d2/)
+
+Whittaker, et al. (2020) [Scaling Replicated State Machines with Compartmentalization (Technical Report)](https://arxiv.org/abs/2012.15762)
 
 ## Farewell and Onto New Things...
 
@@ -429,7 +479,7 @@ tbd
 August 25 8:30PM EDT/August 26 8:30AM HKT
 
 **Reading**:
-tbd
+No reading this week! We'll be talking about two open source opportunities...
 
 **Questions and Discussion Points:**
 
