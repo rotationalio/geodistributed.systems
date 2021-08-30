@@ -481,6 +481,54 @@ August 25 8:30PM EDT/August 26 8:30AM HKT
 **Reading**:
 No reading this week! We'll be talking about two open source opportunities...
 
-**Questions and Discussion Points:**
+**Open Source Projects:**
 
-tbd
+[Honu](https://github.com/rotationalio/honu)
+- Anti-entropy replication is common in systems but not generally used by application
+developers; the goal of Honu is to make anti-entropy more accessible
+- We can build a library for embedded database replication and with eventual consistency we want to prove there is no additional overhead with replication
+- Benefits developers with geo-distributed system across the world with different latencies, different network conditions
+- Honu provides eventual consistency and allows for different types of bandits and different types of possibilities
+- This project has a [code base](https://github.com/rotationalio/honu), which is the bare minimum setup for anti-entropy
+- We have an embedded database that we want Honu to wrap; all it does now is wrap a
+LevelDB database, though we could have an embedded Badger or Rocks or sqlite database
+- Embedded databases are often used for local development; Honu wraps that key-value store, gives you the benefits of speed, and gives you replication, which you can put on a server
+- Honu versions the data instead of overwriting it; it preserves the version history
+- It has 4 basic actions: get/put/delete/iter
+- The database is actually saving objects that are defined by default to have geo-replicated properties
+- It keeps info on parents so you can follow-back version history, it's not real time but sequenced
+- What's not implemented yet is replication; there's a sketch but there are different ways we can do this
+- There's also a nil variable so we can add options and features
+- We have some [benchmark data](https://github.com/rotationalio/honu#readme) too; Honu is comparable to bare-metal LevelDB, which is both promising and means there's a lot of room for improvement
+- We want to investigate the consistency "gotchas"
+- There are opportunities to code, write, and experiment
+- We can move in several directions:
+    - Build it to wrap or bolt on replication to an existing database;
+    - Make it general purpose i.e. “bring your own database”;
+    - Focus only on LevelDB since it’s available in many different languages so we could implement Go/Python/C++ Honu
+- We could also think about how to implement partial replication
+- You don’t need to be a skilled Go developer because the advanced features in Go are not used heavily in Honu; it's a single process, not using channels.
+
+More resources about anti-entropy & Honu
+- Bengfort, et al. [Anti-entropy Bandits (poster)](https://drive.google.com/file/d/1nNxaVjZUsF2RY1lsTj3i2z09FZzXrsZ1/view?usp=sharing)
+- [CSE138 (Distributed Systems) L14: Dynamo: Merkle trees, quorum consistency, tail latency]( https://youtu.be/9KX2wvAgVSo?t=1634)
+- [Anti-Entropy Using CRDTs on HA Datastores @Netflix](https://youtu.be/JirCwLXlH_c?t=380)
+- [Martin Sumner - Riak 3.0 and efficient anti-entropy - Code BEAM STO](https://youtu.be/TCiHqF_XTmE)
+- [Apache Cassandra Lunch Online Meetup #16: Cassandra Anti-Entropy, Repair, and Synchronization](https://youtu.be/Y1WB6_drmus?t=1184)
+
+Concur
+- Organized around the idea that there is no one best consensus algorithm
+- We don't have a repo yet; it's just an idea!
+- The paper we read “Scalable but Wasteful” calls into question if consensus algorithms really help people in industry
+- It would be an API for consensus similar to the sci-kit learn API for ML
+- With sci-kit learn, they came up with a common interface for ML (fit + predict; fit + transform)
+- It was based on the premise that there's no such thing as a “best” ML model
+- There’s some interest in this project from academia.
+- This would be a big undertaking since we have no code base and we'd have to explain the use cases and its application
+- Up for the challenge? Sign up [here](https://tinyurl.com/concurapi)
+
+More resources about Concur
+- Buitinck et al. (2013) [API design for machine learning software: experiences from the scikit-learn project](https://arxiv.org/abs/1309.0238)
+- Bilbro (2021) [Beyond Off-the-Shelf Consensus.](https://postgresconf.org/conferences/2021_Postgres_Conference_Webinars/program/proposals/beyond-off-the-shelf-consensus) PostgresConf.
+- Whittaker et al. [Quoracle](https://mwhittaker.github.io/publications/quoracle.html)
+- Kingsbury et al. [Maelstrom](https://github.com/jepsen-io/maelstrom)
