@@ -21,3 +21,5 @@ new Runtime().module(define, name => {
 });
 </script>
 <!--End of Rotating globe-->
+
+<p align="center">Très reconnaissant pour l'animation du tour du monde de <a href="https://observablehq.com/@mbostock">Mike Bostock</a> d'<a href="https://observablehq.com">Observable</a> </p>
