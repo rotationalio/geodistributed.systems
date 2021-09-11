@@ -22,4 +22,4 @@ new Runtime().module(define, name => {
 </script>
 <!--End of Rotating globe-->
 
-<p align="center">very grateful for world tour animation of <a href="https://observablehq.com/@mbostock">Mike Bostock</a> from <a href="https://observablehq.com">Observable</a> </p>
+<p align="center">Thanks to <a href="https://observablehq.com/@mbostock">Mike Bostock</a> for the world tour animation, originally from <a href="https://observablehq.com">Observable</a> </p>
