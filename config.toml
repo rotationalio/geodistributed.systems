@@ -21,3 +21,8 @@ languageName = "English"
 title = "Systèmes Géo-Distribués"
 weight = 2
 languageName = "Français"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
