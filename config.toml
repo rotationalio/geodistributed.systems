@@ -5,11 +5,29 @@ theme = "learn"
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "blue"
 
+  # Un titre est défini par défaut lorsque vous utilisez un raccourci dans le menu. Utilisez ce paramètre pour le cacher.
+  disableShortcutsTitle = true
+
+  # When using mulitlingual website, disable the switch language button.
+  disableLanguageSwitchingButton = false
+
+  # Hide Next and Previous page buttons normally displayed full height beside content
+  disableNextPrev = true
+
+  # Hide breadcrumbs in the header and only show the current page title
+  disableBreadcrumb = true
+
+  # Disable search function. It will hide search bar
+  disableSearch = false
+
+  # Description of the site, will be used in meta information
+  description = ""
+
 # English is the default language
 defaultContentLanguage = "en"
 
 # Force to have /en/my-page and /fr/my-page routes, even for default language.
-defaultContentLanguageInSubdir= true
+defaultContentLanguageInSubdir= false
 
 [Languages]
 [Languages.en]
@@ -17,10 +35,37 @@ title = "Geo-Distributed Systems"
 weight = 1
 languageName = "English"
 
+[[Languages.en.menu.shortcuts]]
+name = "Honu"
+url = "https://github.com/rotationalio/honu"
+weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "Honu"
+url = "https://github.com/rotationalio/honu"
+weight = 10
+
+[[Languages.en.menu.shortcuts]]
+name = "Talks and Presentations"
+url = "https://postgresconf.org/conferences/2021_Postgres_Conference_Webinars/program/proposals/beyond-off-the-shelf-consensus"
+weight = 10
+
+
 [Languages.fr]
 title = "Systèmes Géo-Distribués"
 weight = 2
 languageName = "Français"
+
+[[Languages.fr.menu.shortcuts]]
+name = "Honu"
+url = "https://github.com/rotationalio/honu"
+weight = 10
+
+[[Languages.fr.menu.shortcuts]]
+name = "Conférences et présentations"
+url = "https://postgresconf.org/conferences/2021_Postgres_Conference_Webinars/program/proposals/beyond-off-the-shelf-consensus"
+weight = 10
+
 
 [markup]
 [markup.goldmark]
