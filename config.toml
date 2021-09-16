@@ -5,7 +5,7 @@ theme = "learn"
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "blue"
 
-  # Un titre est défini par défaut lorsque vous utilisez un raccourci dans le menu. Utilisez ce paramètre pour le cacher.
+  # A title is set by default when you use a shortcut in the menu. Use this setting to hide it.
   disableShortcutsTitle = true
 
   # When using mulitlingual website, disable the switch language button.
@@ -21,7 +21,7 @@ theme = "learn"
   disableSearch = false
 
   # Description of the site, will be used in meta information
-  description = ""
+  description = "landing page for Rotational Labs educational content on globally distributed systems"
 
 # English is the default language
 defaultContentLanguage = "en"
@@ -34,11 +34,6 @@ defaultContentLanguageInSubdir= false
 title = "Geo-Distributed Systems"
 weight = 1
 languageName = "English"
-
-[[Languages.en.menu.shortcuts]]
-name = "Honu"
-url = "https://github.com/rotationalio/honu"
-weight = 10
 
 [[Languages.en.menu.shortcuts]]
 name = "Honu"
