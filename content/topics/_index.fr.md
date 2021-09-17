@@ -1,10 +1,11 @@
 ---
-title: "Topics in Distributed Systems"
+title: "Sujets sur les systèmes distribués"
 date: Thu Jun 10 11:16:31 EDT 2021
-description: "Key topics of interest in geodistributed systems."
+description: "Principaux sujets d'intérêt dans les systèmes géodistribués."
+draft: true
 ---
 
-*Note: This list of topics of interest is constantly changing, so check back frequently for updates! Suggested readings for each topic will also be expanded and modified. Please report expired links [here](https://github.com/rotationalio/geodistributed.systems/issues).*
+*Note : Cette liste de sujets d'intérêt est en constante évolution, alors revenez souvent pour les mises à jour ! Les lectures suggérées pour chaque sujet seront également étendues et modifiées. Veuillez signaler les liens périmés [ici](https://github.com/rotationalio/geodistributed.systems/issues).*
 
 ## What is a Distributed System?
 - Consistency vs Availability
