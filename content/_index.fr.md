@@ -10,16 +10,5 @@ Si vous souhaitez nous contacter, n'hésitez pas à ouvrir un issue sur GitHub o
 
 Grand merci à [Eucalyp](https://thenounproject.com/eucalyp/) de [The Noun Project](https://thenounproject.com/) qui a créé ce logo.
 
-<!--Rotating globe-->
-<div id="observablehq-canvas-1372f32a"></div>
-
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@kngjoel/untitled.js?v=3";
-new Runtime().module(define, name => {
-  if (name === "canvas") return new Inspector(document.querySelector("#observablehq-canvas-1372f32a"));
-});
-</script>
-<!--End of Rotating globe-->
-
-<p align="center">Très reconnaissant pour l'animation world tour de <a href="https://observablehq.com/@mbostock">Mike Bostock</a> d'<a href="https://observablehq.com">Observable</a> </p>
+{{< worldtour >}}
+{{< worldtourthanksfr >}}
