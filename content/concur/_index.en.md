@@ -3,8 +3,7 @@ title: Concur
 ---
 
 ## Consensus is Not One-Size-Fits-All
-One of the things we wanted to communicate with [the Yellowbrick project](https://www.scikit-yb.org/en/develop/)
- is that there is no one “best” machine learning model, only a set of best practices for finding the best model for a given dataset. We believe the distributed systems community has a similar problem; everyone is looking for the golden consensus algorithm, but there’s no silver bullet. What makes sense for Google isn’t best for Facebook; what’s used at Twitter isn’t ideal for Netflix. Different systems need different consensus solutions.
+One of the things we wanted to communicate with [the Yellowbrick project](https://www.scikit-yb.org/en/develop/) is that there is no one “best” machine learning model, only a set of best practices for finding the best model for a given dataset. We believe the distributed systems community has a similar problem; everyone is looking for the golden consensus algorithm, but there’s no silver bullet. What makes sense for Google isn’t best for Facebook; what’s used at Twitter isn’t ideal for Netflix. Different systems need different consensus solutions.
 
 Together we have implemented many of the published algorithms -- Raft, Mencius, ePaxos. We are surprised to see how many elements these implementations have in common. What this tells us is that there’s a common framework that can be abstracted out of these implementations and used to make consensus more convenient for students, researchers, and developers like us.
 
