@@ -1,5 +1,8 @@
 ---
 title: Home
+date: Wed Sep 29 14:10:00 EDT 2021
+anchor: "about"
+weight: 21
 ---
 
 # Systèmes Géo-Distribués

@@ -32,35 +32,13 @@ defaultContentLanguageInSubdir= false
 [Languages]
 [Languages.en]
 title = "Geo-Distributed Systems"
-weight = 1
+weight = 10
 languageName = "English"
-
-[[Languages.en.menu.shortcuts]]
-name = "Honu"
-url = "https://github.com/rotationalio/honu"
-weight = 10
-
-[[Languages.en.menu.shortcuts]]
-name = "Talks and Presentations"
-url = "https://postgresconf.org/conferences/2021_Postgres_Conference_Webinars/program/proposals/beyond-off-the-shelf-consensus"
-weight = 10
-
 
 [Languages.fr]
 title = "Systèmes Géo-Distribués"
-weight = 2
+weight = 11
 languageName = "Français"
-
-[[Languages.fr.menu.shortcuts]]
-name = "Honu"
-url = "https://github.com/rotationalio/honu"
-weight = 10
-
-[[Languages.fr.menu.shortcuts]]
-name = "Conférences et présentations"
-url = "https://postgresconf.org/conferences/2021_Postgres_Conference_Webinars/program/proposals/beyond-off-the-shelf-consensus"
-weight = 10
-
 
 [markup]
 [markup.goldmark]

@@ -1,11 +1,10 @@
 ---
-title: "Summer 2021"
+title: "Discussion Notes"
 date: Wed Jun 16 21:52:01 EDT 2021
 description: "Details, notes, and questions from the Summer 2021 Reading Group."
+anchor: "notes"
+weight: 32
 ---
-
-## Intelligent Distributed Systems Reading Group
-The inaugural Intelligent Distributed Systems Reading Group (IDSRG) will run from June 2021 through September 2021. Our goal is to survey the distributed systems literature with an eye towards thinking of how machine learning and data analysis might be used to make these systems more flexible.
 
 ## Session 1: The Promise and the Peril of Really Big Models
 

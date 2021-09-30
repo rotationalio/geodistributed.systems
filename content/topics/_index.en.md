@@ -2,6 +2,8 @@
 title: "Topics in Distributed Systems"
 date: Thu Jun 10 11:16:31 EDT 2021
 description: "Key topics of interest in geodistributed systems."
+anchor: "topics"
+weight: 25
 ---
 
 *Note: This list of topics of interest is constantly changing, so check back frequently for updates! Suggested readings for each topic will also be expanded and modified. Please report expired links [here](https://github.com/rotationalio/geodistributed.systems/issues).*
