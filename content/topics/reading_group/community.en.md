@@ -39,3 +39,9 @@ Thank you to all our participants!
 
 ![Will Voorhees](Will-Voorhees.png?width=20pc)
 #### Will Voorhees {style=text-align:center}
+
+![Tianshu Li](Tianshu-Li.png?width=20pc)
+#### Tianshu Li {style=text-align:center}
+
+![Patrick Deziel](Patrick-Deziel.png?width=20pc)
+#### Patrick Deziel {style=text-align:center}
